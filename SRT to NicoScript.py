@@ -71,8 +71,12 @@ def input_parse(input):
 	return outstring
 	
 
-
+# Ensure that all newlines show up as carriage returns
+editor.rereplace(r'([^\r])\n', r'\1\r\n')
+# Actual replacement of core subtitle sections
 editor.rereplace(r'[0-9]*\r\n[0-9][0-9]:([0-9][0-9]:[0-9][0-9],[0-9][0-9])[0-9] --> 00:([0-9][0-9]:[0-9][0-9],[0-9][0-9])[0-9]\r\n([^\r\n]+\r\n)*\r\n', input_parse)
+# Addition of brackets
 editor.insertText(0, '[\r\n')
 editor.appendText(']')
+# Cleaning up loose ends to prevent syntax errors
 editor.rereplace(r',[\r\n]*\]', '\r\n\]')
