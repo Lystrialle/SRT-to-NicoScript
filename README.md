@@ -9,8 +9,8 @@ This script is made for use with Notepad++ and its Python Scripts plugin.
 2. Install the Notepad++ Python Script plugin.
 (In Notepad++, Plugins -> Plugins Admin -> Python Script -> Install)
 
-3. Create a new Python Script with the plugin (Plugins -> Python Script -> New Script -> name it whatever you like), copy and paste the contents of [SRT-to-NicoScript.py](../blob/master/SRT-to-NicoScript.py) in, and save.
-**Alternatively**, place the [SRT-to-NicoScript.py](../blob/master/SRT-to-NicoScript.py) file into your Python Script folder, usually C:\Users\{{your name}}\AppData\Roaming\Notepad++\plugins\config\PythonScript\scripts.
+3. Create a new Python Script with the plugin (Plugins -> Python Script -> New Script -> name it whatever you like), copy and paste the contents of [SRT-to-NicoScript.py](../master/SRT-to-NicoScript.py) in, and save.
+**Alternatively**, place the [SRT-to-NicoScript.py](../master/SRT-to-NicoScript.py) file into your Python Script folder, usually C:\Users\{{your name}}\AppData\Roaming\Notepad++\plugins\config\PythonScript\scripts.
 
 4. Open your desired SRT file in Notepad++.
 
