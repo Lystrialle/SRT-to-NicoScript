@@ -36,6 +36,6 @@ This script is made for use with Notepad++ and its Python Scripts plugin.
 
 * Where a block of text in the SRT had multiple lines, the script will split these into multiple comments and have them display simultaneously on the screen (they're also submitted as comments in reverse order, so that they'll appear in the right order vertically when they actually show up as comments).
 
-* Technically speaking, this script breaks if your video is longer than 99 hours, 59 minutes, 59 seconds, and 999 milliseconds, but honestly, if your video is that long, I think you might have other things you need to be worrying about.
+* Technically speaking, this script breaks if your video is 100 hours or longer, but honestly, if your video is that long, I think you might have other things you need to be worrying about.
 
 * Because SRT is made for milliseconds and NicoScript takes hundredths of seconds, I had the script round down to the nearest hundredth, which means that (unlike with real subtitles) things will vanish a barely-noticeable amount of time earlier than usual.
