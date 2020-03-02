@@ -24,6 +24,7 @@ def time_reparser(time):
 	return output + str(msec)
 
 def second_subtract(time1, time2):
+# Calculates the duration the comment needs to be on-screen and outputs in units of seconds.
 # Accepts input in SRT hh:mm:ss,MMM string format. time1 is the initial time and time2 is when the comment should end.
 	time1r = time_reparser(time1)
 	time2r = time_reparser(time2)
@@ -50,7 +51,7 @@ def second_subtract(time1, time2):
 		return str(sec) + '.' +  str(msec)
 
 def output_generator(start, duration, comment):
-# Takes in the inputs for the three NicoScript fields and generates a block for it.
+# Takes in properly formatted inputs for the three NicoScript fields and generates a NicoScript-formatted block for it.
 	if comment == '':
 		return ''
 	else:
@@ -63,9 +64,9 @@ def input_parse(input):
 	
 	start = time_reparser(times[0])
 	duration = second_subtract(times[0], times[1])
-	
+
+# Collects all of the lines of text in the original SRT block and outputs NicoScript-formatted blocks in reverse order.
 	outstring = ''
-	
 	for x in components[2:]:
 		outstring = output_generator(start, duration, x) + outstring
 	return outstring
@@ -75,7 +76,7 @@ def input_parse(input):
 editor.rereplace(r'([^\r])\n', r'\1\r\n')
 # Actual replacement of core subtitle sections
 editor.rereplace(r'[0-9]*\r\n[0-9][0-9]:([0-9][0-9]:[0-9][0-9],[0-9][0-9])[0-9] --> 00:([0-9][0-9]:[0-9][0-9],[0-9][0-9])[0-9]\r\n([^\r\n]+\r\n)*\r\n', input_parse)
-# Addition of brackets
+# Addition of outer brackets
 editor.insertText(0, '[\r\n')
 editor.appendText(']')
 # Cleaning up loose ends to prevent syntax errors
