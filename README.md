@@ -1,3 +1,5 @@
+# SRT to NicoScript
+
 This is a script meant to help convert standard SRT subtitle files to the NicoScript used by Nico Nico Douga for its "uploader comments", thus allowing a video uploader to effectively make captions/subtitles for their video without too much legwork.
 
 This script is made for use with Notepad++ and its Python Scripts plugin.
